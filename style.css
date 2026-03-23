@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(135deg, #fff5f6 0%, #ffe3e8 100%);
+  color: #5d4037;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Centering Logic */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: #d81b60;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+/* Counter & Interaction Styles */
+.counter-box {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(216, 27, 96, 0.1);
+  margin-bottom: 30px;
+}
+
+.counter-box h2 {
+  color: #d81b60;
+  margin: 0;
+  font-family: "Dancing Script", cursive;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reason-text {
+  margin-top: 20px;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.4rem;
+  color: #ad1457;
+  min-height: 1.5em;
+}
+
+/* Buttons */
+.primary-btn,
+#open-letter-btn,
+.secondary-btn {
+  background: #ff85a2;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.secondary-btn {
+  background: #ffc1cc;
+  color: #ad1457;
+}
+
+.primary-btn:hover,
+#open-letter-btn:hover,
+.secondary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+}
+
+/* Existing Overlay & Modal Styles */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+.lock-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 40px;
+  border: 2px solid #ffc1cc;
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ffc1cc;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.letter-paper {
+  background: #fff9e6;
+  padding: 40px;
+  width: 85%;
+  max-width: 500px;
+  position: relative;
+  border-left: 10px solid #ffc1cc;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  text-align: right;
+  color: #ad1457;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Gallery Styles */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 10px 10px 30px 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+}
+
+.card img {
+  width: 250px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.card p {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+
+.flower {
+  position: fixed;
+  top: -10%;
+  z-index: 999;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}

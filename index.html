@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My bb Gwapa ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="birthday-song" loop>
+      <source src="blue.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="lock-screen" class="overlay">
+      <div class="lock-container">
+        <h1>🌸 Hello, Love</h1>
+        <p>Enter our special date to unlock your surprise:</p>
+        <input type="text" id="password" placeholder="MM/DD/YYYY" />
+        <br />
+        <button class="primary-btn" onclick="checkLock()">
+          Unlock My Heart
+        </button>
+      </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+      <header>
+        <h1 class="fade-in">Happy Birthday, My bb Gwapa! ❤️</h1>
+        <p class="subtitle">"Your soul is a beautiful shade of blue..."</p>
+
+        <div class="counter-box">
+          <p>We've been together for:</p>
+          <h2 id="days-together">0 Days</h2>
+        </div>
+
+        <div class="button-group">
+          <button id="open-letter-btn" onclick="openLetter()">
+            💌 Read My Letter
+          </button>
+          <button class="secondary-btn" onclick="showRandomReason()">
+            ✨ Why I Love You
+          </button>
+        </div>
+        <p id="reason-display" class="reason-text"></p>
+      </header>
+
+      <div class="gallery">
+        <div class="card">
+          <img src="photo1.jpg" alt="1" />
+          <p>The Day Where It Started!</p>
+        </div>
+        <div class="card">
+          <img src="photo2.jpg" alt="2" />
+          <p>Our Cute Date</p>
+        </div>
+        <div class="card">
+          <img src="photo3.jpg" alt="3" />
+          <p>My Favorite Smile</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="letter-modal" class="modal hidden">
+      <div class="letter-paper">
+        <span class="close-btn" onclick="closeLetter()">&times;</span>
+        <div class="letter-text">
+          <h2>My Dearest Love,</h2>
+          <p>
+            Happy Birthday! I wanted to make something special just for you
+            because you deserve the world.
+          </p>
+          <p>
+            Ever since we met, you've brought so much color into my life. Thank
+            you for being the most amazing person I know. I hope this little
+            surprise makes you smile as much as you make me smile every day.
+          </p>
+          <p>I love you always.</p>
+          <p class="signature">Forever yours,<br />Keyan Gwapo</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
