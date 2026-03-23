@@ -1,29 +1,24 @@
 const MY_PASSWORD = "05/20/2024";
 
-// Random Reasons Array
 const reasons = [
-  "The way you smile when you're happy ✨",
-  "How you support my coding projects 💻",
-  "Your kind and beautiful soul 🌸",
-  "The way you make every day feel special ❤️",
-  "You are my favorite view in the whole world 🌹",
-  "The way you laugh at my silly jokes 😂",
-  "The way you smile when you're happy ✨",
-  "How you support my coding projects 💻",
-  "Your kind and beautiful soul 🌸",
-  "The way you make every day feel special ❤️",
-  "You are my favorite view in the whole world 🌹",
-  "I Love You bb! ❤️",
-  "Your patience when I'm stuck on a bug 🐞",
-  "How you make even the hardest days feel easy ☁️",
-  "The way your eyes light up when you talk about things you love 💡",
-  "Being my peace in a very loud world 🌊",
-  "How you're not just my love, but my best friend 🤝",
-  "The beautiful 'shade of blue' you bring to my life 💙",
-  "Your incredible strength and ambition 🏔️",
-  "How you make our 'together' feel like home 🏠",
-  "The way you always know how to make me feel better 🍫",
-  "Your intelligence and the way you handle everything with grace 🎓",
+  "1. May your 18th year be as bright as your smile! 🌟",
+  "2. To more adventures and 'bugs' we'll solve together 💻",
+  "3. I wish you endless success in your studies and dreams 🎓",
+  "4. May you always keep that kind and beautiful soul 🌸",
+  "5. Cheers to being officially an adult, but always my baby ❤️",
+  "6. I wish for your happiness today and every single day 🌹",
+  "7. You are, and will always be, my favorite view 📸",
+  "8. May all your 18-year-old dreams start coming true today ✨",
+  "9. Thank you for being my peace in this loud world 🌊",
+  "10. I wish for more coffee dates and late-night talks with you ☕",
+  "11. May you grow even stronger and more graceful 🏔️",
+  "12. You deserve the world, and I'll try my best to give it to you 🌍",
+  "13. To 18 years of beauty, and a lifetime more to go 🥂",
+  "14. I'm so proud of the woman you are becoming 👑",
+  "15. May your heart always stay as pure as it is now 🤍",
+  "16. I wish for more shared laughter that makes our tummies hurt 😂",
+  "17. You are the most beautiful debutante in the world 👗",
+  "18. I love you more than all the lines of code I've ever written! 💖",
 ];
 
 function checkLock() {
@@ -46,29 +41,28 @@ function checkLock() {
   }
 }
 
-// Function to calculate and show days together
 function startCounter() {
   const startDate = new Date("05/20/2024");
   const now = new Date();
   const timeDiff = Math.abs(now - startDate);
   const diffDays = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-  document.getElementById("days-together").innerText = diffDays + " Days";
+  document.getElementById("days-together").innerText = diffDays + " Days of Us";
 }
 
-// Function to show a random reason
 function showRandomReason() {
   const display = document.getElementById("reason-display");
   const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
 
   display.style.opacity = 0;
+  display.style.transform = "scale(0.9)";
+
   setTimeout(() => {
     display.innerText = randomReason;
     display.style.opacity = 1;
-    display.style.transition = "opacity 0.5s";
+    display.style.transform = "scale(1)";
   }, 200);
 }
 
-// Letter Functions
 function openLetter() {
   document.getElementById("letter-modal").classList.remove("hidden");
 }
@@ -77,7 +71,6 @@ function closeLetter() {
   document.getElementById("letter-modal").classList.add("hidden");
 }
 
-// Flower Animation
 function createFlower() {
   const flowers = ["🌸", "🌷", "🌹", "✨", "❤️"];
   const flower = document.createElement("div");
@@ -91,7 +84,6 @@ function createFlower() {
 }
 setInterval(createFlower, 400);
 
-// Celebration Confetti
 function triggerConfetti() {
   confetti({
     particleCount: 150,
