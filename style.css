@@ -1,13 +1,15 @@
 body {
   margin: 0;
   font-family: "Playfair Display", serif;
-  background: linear-gradient(135deg, #fff5f6 0%, #ffe3e8 100%);
+  /* Soft pink gradient with a floral pattern overlay */
+  background:
+    linear-gradient(rgba(255, 245, 246, 0.8), rgba(255, 227, 232, 0.8)),
+    url("https://www.transparenttextures.com/patterns/gray-floral.png");
   color: #5d4037;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Centering Logic */
 header {
   display: flex;
   flex-direction: column;
@@ -17,11 +19,27 @@ header {
   padding: 60px 20px;
 }
 
+.debut-badge {
+  background: #d81b60;
+  color: white;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  box-shadow: 0 0 20px rgba(216, 27, 96, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
 header h1 {
   font-family: "Dancing Script", cursive;
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(2.2rem, 8vw, 4rem);
   color: #d81b60;
-  margin-bottom: 5px;
+  margin: 0 0 10px 0;
 }
 
 .subtitle {
@@ -31,19 +49,20 @@ header h1 {
   opacity: 0.8;
 }
 
-/* Counter & Interaction Styles */
 .counter-box {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 15px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(216, 27, 96, 0.1);
   margin-bottom: 30px;
+  border: 1px solid #ffc1cc;
 }
 
 .counter-box h2 {
   color: #d81b60;
   margin: 0;
   font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
 }
 
 .button-group {
@@ -59,19 +78,19 @@ header h1 {
   font-size: 1.4rem;
   color: #ad1457;
   min-height: 1.5em;
+  transition: all 0.3s ease;
 }
 
-/* Buttons */
 .primary-btn,
 #open-letter-btn,
 .secondary-btn {
   background: #ff85a2;
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 35px;
   border-radius: 50px;
   font-family: "Dancing Script", cursive;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -88,17 +107,39 @@ header h1 {
   box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
 }
 
-/* Existing Overlay & Modal Styles */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.flower {
+  position: fixed;
+  top: -10%;
+  z-index: 999;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  transition: opacity 1s ease;
 }
 
 .lock-container {
@@ -152,7 +193,6 @@ input {
   cursor: pointer;
 }
 
-/* Gallery Styles */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -169,28 +209,15 @@ input {
 }
 
 .card img {
-  width: 250px;
-  height: 320px;
+  width: 260px;
+  height: 330px;
   object-fit: cover;
 }
 
 .card p {
   font-family: "Dancing Script", cursive;
   text-align: center;
-}
-
-.flower {
-  position: fixed;
-  top: -10%;
-  z-index: 999;
-  pointer-events: none;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-  }
+  color: #ad1457;
 }
 
 .hidden {
